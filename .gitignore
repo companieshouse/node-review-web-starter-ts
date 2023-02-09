@@ -80,13 +80,18 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
+dist/**/*
+
 
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
-# public
+
+assets/public/images/**/*
+assets/public/fonts/**/*
+assets/public/app.min.*
 
 # vuepress build output
 .vuepress/dist
