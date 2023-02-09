@@ -1,4 +1,4 @@
-import { Logger } from "./../Logger";
+import * as logger from "./../Logger";
 
 export class GenericValidator {
 
@@ -8,7 +8,6 @@ export class GenericValidator {
 
     isValidEmail(email: string): Promise<boolean> {
       logger.info(`Request to validate email: ${email}`);
-      let errors = this._getErrorSignature();
       return new Promise((resolve, reject) => {
         // validate email here
         resolve(true);
