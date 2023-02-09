@@ -4,12 +4,11 @@ import { GenericHandler } from "./../generic";
 export class HomeHandler extends GenericHandler {
 
     constructor () {
-      this.viewData = {
+        super();
+        this.viewData = {
   			title: 'Home handler for index route',
-  			this_data: {
-  				sample_key:"sample value",
-          errors: {}
-  			}
+            sample_key:"sample value",
+            errors: {}
   		};
     }
 

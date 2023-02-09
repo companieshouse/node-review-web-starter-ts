@@ -1,7 +1,7 @@
 import * as express from "express";
 import { HomeHandler } from './handlers/index/home';
 
-const CompanyRoute = (app: express.Application) => {
+const IndexRoute = (app: express.Application) => {
 
   app.post("/", async (req: express.Request, res: express.Response) => {
 		const viewData = await HomeHandler.execute(req, res);
@@ -9,4 +9,4 @@ const CompanyRoute = (app: express.Application) => {
 	});
 };
 
-export default CompanyRoute;
+export default IndexRoute;

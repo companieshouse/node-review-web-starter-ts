@@ -1,6 +1,6 @@
 import * as express from "express";
 import { CreateHandler } from './handlers/company/create';
-import { ViewHandler } from './handlers/company/view';
+import { DetailsHandler } from './handlers/company/details';
 
 const CompanyRoute = (app: express.Application) => {
 
@@ -19,7 +19,7 @@ const CompanyRoute = (app: express.Application) => {
 	});
 
   app.get("/details", async (req: express.Request, res: express.Response) => {
-		const viewData = await ViewHandler.execute(req, res);
+		const viewData = await DetailsHandler.execute(req, res);
 		res.render('company/details', viewData);
 	});
 };

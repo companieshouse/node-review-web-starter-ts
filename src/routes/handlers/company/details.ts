@@ -4,11 +4,12 @@ import { GenericHandler } from "./../generic";
 export class DetailsHandler extends GenericHandler {
 
     constructor () {
-      title: 'View handler for company route',
-      this_data: {
-        sample_key:"sample value",
-        errors: {},
-      }
+        super();
+        this.viewData = {
+            title: 'Details handler for company route',
+            sample_key:"sample value",
+            errors: {}
+        };
     }
 
     async execute(req: express.Request, response: express.Response): Promise<ResponseType> {

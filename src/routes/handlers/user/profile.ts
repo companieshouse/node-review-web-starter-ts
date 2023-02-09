@@ -4,11 +4,11 @@ import { GenericHandler } from "./../generic";
 export class ProfileHandler extends GenericHandler {
 
     constructor () {
-      this.viewData = {
+        super();
+        this.viewData = {
   			title: 'Profile handler for user route',
-  			this_data: {
-  				sample_key:"sample value"
-  			}
+            sample_key:"sample value",
+            errors: {}
   		};
     }
 

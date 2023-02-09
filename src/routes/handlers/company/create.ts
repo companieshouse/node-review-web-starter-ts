@@ -4,16 +4,15 @@ import { GenericHandler } from "./../generic";
 export class CreateHandler extends GenericHandler {
 
     constructor () {
-      this.viewData = {
-  			title: 'Create handler for company route',
-  			this_data: {
-  				sample_key:"sample value",
-          errors: {},
-  			}
-  		};
+        super();
+        this.viewData = {
+            title: 'Create handler for company route',
+            sample_key:"sample value",
+            errors: {},
+        };
     }
 
-    async execute(req: express.Request, response: express.Response, method: string = '' ): Promise<SomeResponseType> {
+    public async execute(req: express.Request, response: express.Response, method: string = '' ): Promise<SomeResponseType> {
       // ...process request here and return data for the view
 
       let savedRequest: boolean = false;

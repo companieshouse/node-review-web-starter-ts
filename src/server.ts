@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import * as http from "http";
 import * as https from "https";
-import { Logger } from "./lib/Logger";
-import app from "../app";
+import * as logger from "./lib/Logger";
+import * as app from "./app";
 
 // start the HTTP server
 const httpServer = http.createServer(app);

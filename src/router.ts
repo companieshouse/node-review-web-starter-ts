@@ -2,7 +2,7 @@
 // Map incoming path to appropriate route (sometimes called "route dispatch")
 
 import { IndexRoute } from './routes/indexRoute';
-import { CompanyRoute } from './routes/userRoute';
+import { UserRoute } from './routes/userRoute';
 import { CompanyRoute } from './routes/companyRoute';
 
 const router = (app) => {

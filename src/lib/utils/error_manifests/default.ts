@@ -1,4 +1,4 @@
-export default ErrorManifest = {
+const ErrorManifest = {
   generic: {
     serverError: {
       summary: "There was an error processing your request. Please try again."
@@ -21,3 +21,5 @@ export default ErrorManifest = {
     },
   }
 };
+
+export default ErrorManifest;

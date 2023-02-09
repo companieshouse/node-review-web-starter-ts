@@ -1,5 +1,5 @@
 {
-  "name": "node-web-starter-ts",
+  "name": "web-starter-ts",
   "version": "1.0.0",
   "description": "A starter web application for NodeJS with Typescript",
   "main": "dist/server.js",
@@ -14,7 +14,7 @@
     "lint:fix": "eslint 'src/*.ts' 'src/**/*.ts' --fix",
     "test": "mocha --recursive test/src/**/*.ts"
   },
-  "author": "Moses Wejuli<mwejuli@companieshouse.gov.uk>",
+  "author": "Moses Wejuli <mwejuli@companieshouse.gov.uk>",
   "license": "MIT",
   "dependencies": {
     "@companieshouse/api-sdk-node": "^1.0.5",
@@ -78,5 +78,17 @@
       "**/*.test.ts"
     ],
     "exec": "source ./src/config/.env && npm build:server && node dist/server.js"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/companieshouse/node-review-web-starter-ts.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/companieshouse/node-review-web-starter-ts/issues"
+  },
+  "homepage": "https://github.com/companieshouse/node-review-web-starter-ts#readme"
 }

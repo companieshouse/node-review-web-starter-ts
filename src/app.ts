@@ -2,7 +2,8 @@ import * as express from "express";
 import * as nunjucks from "nunjucks";
 import * as cookieParser from "cookie-parser";
 import * as path from "path";
-import * from "./router";
+import * as router from "./router";
+import * as logger from "./lib/Logger";
 
 const app = express();
 
