@@ -2,9 +2,11 @@ import * as logger from "./../../Logger";
 import ErrorManifest from "./../../utils/error_manifests/default";
 
 export class UserFormsValidator extends Validator {
+
     errorManifest: any;
     errors: any;
     payload: any;
+
     constructor() {
         super();
         this.errors = {};
