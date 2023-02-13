@@ -7,7 +7,7 @@ export class CreateHandler extends GenericHandler {
         super();
         this.viewData = {
             title: 'Create handler for company route',
-            sample_key:"sample value",
+            sampleKey:"sample value",
             errors: {},
         };
     }
@@ -15,11 +15,11 @@ export class CreateHandler extends GenericHandler {
     public async execute(req: express.Request, response: express.Response, method: string = '' ): Promise<SomeResponseType> {
       // ...process request here and return data for the view
 
-      let savedRequest: boolean = false;
-
-      if (method === 'POST') {
+      if (method !== 'POST') {
         return this.viewData;
       }
+
+      let savedRequest: boolean = false;
 
       const validationErrors = await this.validate(req.body);
 
@@ -29,7 +29,7 @@ export class CreateHandler extends GenericHandler {
         savedRequest = await this.save(req.body);
       }
       if (!savedRequest) {
-        this.viewData.errors.serverError = ErrorManifest.generic.serverError;
+        this.viewData.errors.serverError = this.errorManifest.generic.serverError;
       }
 
       return this.viewData;
@@ -40,7 +40,7 @@ export class CreateHandler extends GenericHandler {
       return Promise.resolve({});
     }
 
-    private async save(payload): SomeResponseType {
+    private save(payload): SomeResponseType {
       // save data here
       return Promise.resolve(true);
     }

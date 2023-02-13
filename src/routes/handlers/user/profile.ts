@@ -7,7 +7,7 @@ export class ProfileHandler extends GenericHandler {
         super();
         this.viewData = {
   			title: 'Profile handler for user route',
-            sample_key:"sample value",
+            sampleKey:"sample value",
             errors: {}
   		};
     }

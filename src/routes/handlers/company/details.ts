@@ -7,7 +7,7 @@ export class DetailsHandler extends GenericHandler {
         super();
         this.viewData = {
             title: 'Details handler for company route',
-            sample_key:"sample value",
+            sampleKey:"sample value",
             errors: {}
         };
     }

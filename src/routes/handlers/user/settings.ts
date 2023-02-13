@@ -7,7 +7,7 @@ export class SettingsHandler extends GenericHandler {
         super();
         this.viewData = {
   			title: 'Settings handler for user route',
-            sample_key:"sample value",
+            sampleKey:"sample value",
             errors: {}
   		};
     }

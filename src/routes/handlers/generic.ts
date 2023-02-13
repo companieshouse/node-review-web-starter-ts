@@ -6,9 +6,10 @@ import ErrorManifest  from "./../../lib/utils/error_manifests/default";
 export class GenericHandler {
 
     viewData: SomeType;
+    errorManifest: someType2;
 
     constructor () {
-      
+      this.errorManifest = ErrorManifest;
     }
 
     someCommonMethod(): ResponseType {

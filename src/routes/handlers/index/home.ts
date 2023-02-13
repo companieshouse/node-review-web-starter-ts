@@ -7,7 +7,7 @@ export class HomeHandler extends GenericHandler {
         super();
         this.viewData = {
   			title: 'Home handler for index route',
-            sample_key:"sample value",
+            sampleKey:"sample value",
             errors: {}
   		};
     }
