@@ -1,14 +1,14 @@
 import * as logger from "./../../Logger";
 import { GenericValidator } from "./../../validation/generic";
 
-export class UserFormsValidator extends GenericValidator {
+export class CompanyFormsValidator extends GenericValidator {
 
     constructor() {
         super();
     }
 
-    validateSettingsUpdate(payload: any): Promise<any> {
-        logger.info(`Request to validate update user settings form`);
+    validateCreateCompany(payload: any): Promise<any> {
+        logger.info(`Request to validate create company form`);
 
         try {
             if(typeof payload.email !== 'undefined' && !payload.email.length) {
@@ -31,11 +31,8 @@ export class UserFormsValidator extends GenericValidator {
         }
     }
 
-    validateProfileUpdate(payload: any): Promise<any> {
+    validateSaveDetails(payload: any): Promise<any> {
 
     }
 
-    validateRegistration(payload: any): Promise<any> {
-
-    }
 };

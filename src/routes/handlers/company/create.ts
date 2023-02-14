@@ -1,5 +1,6 @@
 import * as express from "express";
 import { GenericHandler } from "./../generic";
+import { CompanyFormsValidator } from "./../../../lib/validation/formValidators/company";
 
 export class CreateHandler extends GenericHandler {
 
@@ -21,9 +22,9 @@ export class CreateHandler extends GenericHandler {
 
       let savedRequest: boolean = false;
 
-      const validationErrors = await this.validate(req.body);
+      const validationErrors = await CompanyFormsValidator.validateCreateCompany(req.body);
 
-      if(!Object.keys(validationErrors).length) {
+      if(!Object.keys(validationErrors.stack).length) {
           this.viewData.errors = validationErrors.stack;
       } else {
         savedRequest = await this.save(req.body);
@@ -35,13 +36,8 @@ export class CreateHandler extends GenericHandler {
       return this.viewData;
     }
 
-    private validate(payload): SomeResponseType {
-      // validate here
-      return Promise.resolve({});
-    }
-
     private save(payload): SomeResponseType {
-      // save data here
+      // call service(s) to save data
       return Promise.resolve(true);
     }
 
