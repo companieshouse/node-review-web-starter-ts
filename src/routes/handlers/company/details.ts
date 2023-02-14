@@ -1,5 +1,6 @@
 import * as express from "express";
 import { GenericHandler } from "./../generic";
+import { CompanyFormsValidator } from "./../../../lib/validation/formValidators/company";
 
 export class DetailsHandler extends GenericHandler {
 

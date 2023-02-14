@@ -12,7 +12,7 @@ export class SettingsHandler extends GenericHandler {
   		};
     }
 
-    async execute(req: express.Request, response: express.Response, method?: string): Promise<ResponseType> {
+    async execute(req: express.Request, response: express.Response, method: string = 'GET'): Promise<ResponseType> {
       // ...process request here and return data for the view
       return this.viewData;
     }
