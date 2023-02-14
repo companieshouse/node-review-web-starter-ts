@@ -6,6 +6,7 @@ import { CompanyFormsValidator } from "./../../../lib/validation/formValidators/
 export class CreateHandler extends GenericHandler {
 
     validator: someType;
+
     constructor () {
         super();
         this.validator = new CompanyFormsValidator();
@@ -19,7 +20,9 @@ export class CreateHandler extends GenericHandler {
     // process request here and return data for the view
     public async execute(req: express.Request, response: express.Response, method: string = 'GET' ): Promise<SomeResponseType> {
         logger.info(`${method} request for to create a company `);
+
         try {
+            
             if (method !== 'POST') {
                 return this.viewData;
             }
