@@ -22,7 +22,7 @@ export class CreateHandler extends GenericHandler {
         logger.info(`${method} request for to create a company `);
 
         try {
-            
+
             if (method !== 'POST') {
                 return this.viewData;
             }

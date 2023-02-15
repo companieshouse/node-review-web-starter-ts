@@ -83,3 +83,8 @@ Empty directories and files, wherever you find them, are only there for complete
 ### 2. Unit testing
 
 - This starter kit uses Mocha, Chai and Sinon which have long been the gold standard for writing tests for Node.js apps. Another excellent option is [Jest](https://jestjs.io).
+
+
+### 3. Coding standards
+
+- Companies House follows the [StandardJS](https://standardjs.com/) coding conventions for both JavaScript and Typescript. Details about these guidelines are documented internally [here](https://github.com/companieshouse/styleguides/blob/main/javascript_node.md).
