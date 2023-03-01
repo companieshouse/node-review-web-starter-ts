@@ -6,11 +6,10 @@ import * as logger from "./../Logger";
 import * as ErrorManifest from "./../utils/error_manifests/default";
 
 export class GenericValidator {
-
     errors: any;
     payload: any;
     errorManifest: any;
-    constructor() {
+    constructor () {
         this.errors = this.getErrorSignature();
         this.errorManifest = ErrorManifest;
     }
@@ -18,42 +17,42 @@ export class GenericValidator {
     protected getErrorSignature () {
         return {
             status: 400,
-            code: 'VALIDATION_ERRORS',
+            code: "VALIDATION_ERRORS",
             message: this.errorManifest.validation.default.summary,
             stack: {}
-        }
+        };
     }
 
-    isValidEmail(email: string): boolean {
+    isValidEmail (email: string): boolean {
         logger.info(`Request to validate email: ${email}`);
-        const regex = '/^[email_regex]$/ig';
+        const regex = "/^[email_regex]$/ig";
         if (regex.test(email)) {
             return true;
         }
         return false;
     }
 
-    isValidUsername(username: string): boolean {
+    isValidUsername (username: string): boolean {
         logger.info(`Request to validate username: ${username}`);
-        const regex = '/^[username_regex]$/ig';
+        const regex = "/^[username_regex]$/ig";
         if (regex.test(username)) {
             return true;
         }
         return false;
     }
 
-    isValidGender(gender: string): boolean {
+    isValidGender (gender: string): boolean {
         logger.info(`Request to validate gender: ${gender}`);
-        const regex = '/^[gender_regex]$/ig';
+        const regex = "/^[gender_regex]$/ig";
         if (regex.test(gender)) {
             return true;
         }
         return false;
     }
 
-    isValidPostCode(postCode: string): boolean {
+    isValidPostCode (postCode: string): boolean {
         logger.info(`Request to validate PostCode: ${postCode}`);
-        const regex = '/^[postCode_regex]$/ig';
+        const regex = "/^[postCode_regex]$/ig";
         if (regex.test(postCode)) {
             return true;
         }

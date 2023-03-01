@@ -2,16 +2,15 @@ import * as logger from "./../../Logger";
 import { GenericValidator } from "./../../validation/generic";
 
 export class CompanyFormsValidator extends GenericValidator {
-
-    constructor() {
+    constructor (classParam?: ParamType) {
         super();
     }
 
-    validateCreateCompany(payload: any): Promise<any> {
+    validateCreateCompany (payload: any): Promise<any> {
         logger.info(`Request to validate create company form`);
 
         try {
-            if(typeof payload.email !== 'undefined' && !payload.email.length) {
+            if (typeof payload.email !== "undefined" && !payload.email.length) {
                 this.errors.stack.email = this.errorManifest.validation.email.blank;
             } else if (this.isValidEmail(payload.email)) {
                 this.errors.stack.email = this.errorManifest.validation.email.incorrect;
@@ -20,7 +19,7 @@ export class CompanyFormsValidator extends GenericValidator {
             // validate additional fields in payload here, adding to error object as and when validation fails
 
             // finally, check if all fields validated correctly, or if one or more of them failed
-            if(!Object.keys(this.errors.stack).length) {
+            if (!Object.keys(this.errors.stack).length) {
                 return Promise.resolve(true);
             } else {
                 return Promise.reject(this.errors);
@@ -31,8 +30,7 @@ export class CompanyFormsValidator extends GenericValidator {
         }
     }
 
-    validateSaveDetails(payload: any): Promise<any> {
+    validateSaveDetails (payload: any): Promise<any> {
 
     }
-
 };

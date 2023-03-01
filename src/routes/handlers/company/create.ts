@@ -4,26 +4,24 @@ import { GenericHandler } from "./../generic";
 import { CompanyFormsValidator } from "./../../../lib/validation/formValidators/company";
 
 export class CreateHandler extends GenericHandler {
-
     validator: someType;
 
     constructor () {
         super();
         this.validator = new CompanyFormsValidator();
         this.viewData = {
-            title: 'Create handler for company route',
-            sampleKey:"sample value",
-            errors: {},
+            title: "Create handler for company route",
+            sampleKey: "sample value",
+            errors: {}
         };
     }
 
     // process request here and return data for the view
-    public async execute(req: express.Request, response: express.Response, method: string = 'GET' ): Promise<SomeResponseType> {
+    public async execute (req: express.Request, response: express.Response, method: string = "GET"): Promise<SomeResponseType> {
         logger.info(`${method} request for to create a company `);
 
         try {
-
-            if (method !== 'POST') {
+            if (method !== "POST") {
                 return this.viewData;
             }
 
@@ -43,12 +41,12 @@ export class CreateHandler extends GenericHandler {
     }
 
     // call service(s) to save data here
-    private save(payload: any): SomeResponseType {
+    private save (payload: any): SomeResponseType {
         return Promise.resolve(true);
     }
 
     // additional support method in handler
-    private async supportMethod2(): SomeResponseType {
+    private async supportMethod2 (): SomeResponseType {
 
     }
 };

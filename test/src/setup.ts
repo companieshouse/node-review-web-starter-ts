@@ -8,7 +8,7 @@ chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
 // global.expect = chai.expect;
-// (global as any)['expect'] = chai.expect;
+(global as any)["expect"] = chai.expect;
 
 process.env.API_URL = "http://testapi.co";
 process.env.COOKIE_SECRET = "Xy6onkjQWF0TkRn0hfdqUw==";
