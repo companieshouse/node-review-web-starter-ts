@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+  <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
+  <!--[(if gt IE 8) | (!IE)]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    {% include "_partials/__header.njk" %}
+  </head>
+
+  <body>
+    <div class="root">
+      <main id="content" role="main">
+          <div class="main-content">
+            {% block main_content %}
+            {% endblock %}
+          </div>
+      </main>
+    </div>
+  </body>
+</html>

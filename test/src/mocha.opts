@@ -1,0 +1,4 @@
+--require test/setup.ts
+test/src
+--recursive
+--exit
