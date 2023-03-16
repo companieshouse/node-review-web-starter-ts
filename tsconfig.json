@@ -8,10 +8,12 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./src",
+    "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
     "strict": true,
+    "noImplicitAny": true,
     "typeRoots": [
       "node_modules/@types"
     ],

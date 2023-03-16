@@ -1,38 +1,22 @@
 $govuk-global-styles: true;
 
 @import "node_modules/govuk-frontend/govuk/all";
+
 html {
   font-family: arial;
 }
-main {
-  display: inline-block;
-  clear: both;
-  width: 41%;
-  .content-primary {
-    float: right;
-    width: 54%;
+body {
+  .govuk-header__logo {
+    width: 35%;
   }
-  .side-nav-left {
-    float: left;
-    border-right: 1px solid #eee;
-    padding-right: 38px;
-    ul.routes-wrapper {
-      list-style-type: none;
-      li {
-        padding: 3px 0 3px 0;
-      }
-    }
-    ul.route-links {
-      list-style-type: circle;
-      margin-left: -10px;
-    }
+  .govuk-header__content {
+    width: 65%;
   }
 }
 
-footer {
-  width: 41%;
-  p {
-    text-align: center;
-    font-size: 0.7em;
+form {
+  fieldset {
+    border: 0;
   }
 }
+

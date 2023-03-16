@@ -1,18 +1,18 @@
-import * as logger from "./../../Logger";
+import logger from "./../../Logger";
 import { GenericValidator } from "./../../validation/generic";
 
 export class UserFormsValidator extends GenericValidator {
-    constructor (classParam?: ParamType) {
+    constructor (classParam?: string) {
         super();
     }
 
     validateSettingsUpdate (payload: any): Promise<any> {
-        logger.info(`Request to validate update user settings form`);
+        logger.info(`Request to validate update user settings payload`);
 
         try {
             if (typeof payload.email !== "undefined" && !payload.email.length) {
                 this.errors.stack.email = this.errorManifest.validation.email.blank;
-            } else if (this.isValidEmail(payload.email)) {
+            } else if (!this.isValidEmail(payload.email)) {
                 this.errors.stack.email = this.errorManifest.validation.email.incorrect;
             }
 
@@ -31,10 +31,10 @@ export class UserFormsValidator extends GenericValidator {
     }
 
     validateProfileUpdate (payload: any): Promise<any> {
-
+        return Promise.resolve(true);
     }
 
     validateRegistration (payload: any): Promise<any> {
-
+        return Promise.resolve(true);
     }
 };

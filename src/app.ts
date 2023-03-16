@@ -1,9 +1,8 @@
-import * as express from "express";
-import * as nunjucks from "nunjucks";
-import * as cookieParser from "cookie-parser";
-import * as path from "path";
-import * as router from "./router";
-import * as logger from "./lib/Logger";
+import express, { Request, Response } from "express";
+import nunjucks from "nunjucks";
+import path from "path";
+import logger from "./lib/Logger";
+import routerDispatch from "./router.dispatch";
 
 const app = express();
 
@@ -23,40 +22,39 @@ const njk = new nunjucks.Environment(
 njk.express(app);
 app.set("view engine", "njk");
 
-// serve static files
+// Serve static files
 app.use(express.static(path.join(__dirname, "/../assets/public")));
-// app.use('/assets', express.static('./../node_modules/govuk-frontend/govuk/assets'))
+// app.use("/assets", express.static("./../node_modules/govuk-frontend/govuk/assets"));
+
+njk.addGlobal("cdnUrlCss", process.env.CDN_URL_CSS);
+njk.addGlobal("cdnUrlJs", process.env.CDN_URL_JS);
+njk.addGlobal("cdnHost", process.env.CDN_HOST);
+njk.addGlobal("chsUrl", process.env.CHS_URL);
 
 // If app is behind a front-facing proxy, and to use the X-Forwarded-* headers to determine the connection and the IP address of the client
-// app.enable("trust proxy");
+app.enable("trust proxy");
 
 // parse body into req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// apply our default router to /
-// app.use("/", router);
-
-// Channel all requests through the router
-router(app);
-
-// unhandled errors
-app.use((err, req, res, next) => {
-    const status = err.status || 500;
-    logger.error(`${status} - appError: ${err.stack}`);
+// Unhandled errors
+app.use((err: any, req:express.Request, res: express.Response, next: express.NextFunction) => {
+    logger.error(`${err.name} - appError: ${err.message} - ${err.stack}`);
 });
 
-// unhandled exceptions
-process.on("uncaughtException", err => {
-    const status = err.status || 500;
-    logger.error(`${status} - uncaughtException: ${err.stack}`);
+// Channel all requests through router dispatch
+routerDispatch(app);
+
+// Unhandled exceptions
+process.on("uncaughtException", (err: any) => {
+    logger.error(`${err.name} - uncaughtException: ${err.message} - ${err.stack}`);
     process.exit(1);
 });
 
-// unhandled promise rejections
-process.on("unhandledRejection", err => {
-    const status = err.status || 500;
-    logger.error(`${status} - unhandledRejection: ${err.stack}`);
+// Unhandled promise rejections
+process.on("unhandledRejection", (err: any) => {
+    logger.error(`${err.name} - unhandledRejection: ${err.message} - ${err.stack}`);
     process.exit(1);
 });
 
