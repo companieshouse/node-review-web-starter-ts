@@ -2,6 +2,8 @@
 
 This web-starter is designed to allow you to very quickly create a GOV_UK web app using Typescript/Node.js. It provides you with the essential building blocks (or scaffolding) for piecing together a Typescript web app and to dictate your overall project structure.
 
+A corresponding web-starter, in native Javascript, can be found [here](https://github.com/companieshouse/node-review-web-starter-js).
+
 #### Super Quick Note:
 
 There's a **To-do** list at the bottom of this document. Please take a moment to have a quick look through at what remains to be done, and feel free to complete one or more items on this list or add items that you feel were omitted, or would be useful to have.
@@ -92,7 +94,7 @@ Empty directories and files, wherever you find them, are only there for complete
 
 - We've opted for the Model-View-Controller design pattern that provides a clear separation of concerns, if executed correctly. This ensures that the task of scaling to a very large codebase with a small or large team(s) remains simple, transparent and minimises source bloat.
 - In Node.js parlance, a controller is commonly referred to as a "router" and a controller action is called a "handler". In this starter, we use the "routers" and "handlers" naming convention as opposed to "controllers" and "actions".
-- There's a router dispatch file (`./src/router.dispatch.js`) where all router dispatch is handled i.e. incoming request routes are mapped to their pertinent routers, and consequently to the handler designed to handle that route.
+- There's a router dispatch file (`./src/router.dispatch.ts`) where all router dispatch is handled i.e. incoming request routes are mapped to their pertinent routers, and consequently to the handler designed to handle that route.
 - We have incorporated the concept of "atomic" handlers where all the handler logic will be neatly tucked away in separate modules without crowding out the primary router file. It also means that different developers can work on the similarly grouped tasks in the same router with little or no versioning conflicts!
 - A similar approach to this is router helpers which contain routines and methods that you'd rather see obscured from the primary router file. Router helpers, if desired, can be created as a sub-folder within the main router folder, however, it might be sufficient to add all your helpers to the generic handler (`./src/routers/handlers/generic.ts`) - which exposes common methods to all handlers - without the need to use the "utilities" approach.
 
@@ -140,4 +142,7 @@ Empty directories and files, wherever you find them, are only there for complete
 - [x] Include sample page displays on start-up with CH headers, CH footers and GOV_UK error flows
 - [ ] Assign non-typed objects (and also replace the `any` type) with well-defined types and interfaces across class definitions and methods
 - [ ] Bump up test coverage to meet set thresholds
+- [ ] Resolve all vulnerability warnings and errors flagged by `npm audit`
+- [ ] Upgrade to Node v18 at appropriate time
 - [ ] Squelch SASS compilation deprecation warnings coming from the `govuk-frontend` toolkit. These deprecation warnings are a known issue [here](https://github.com/alphagov/govuk-frontend/issues/2238).
+

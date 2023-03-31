@@ -15,11 +15,6 @@ router.post("/create", async (req: Request, res: Response, next: NextFunction) =
     const handler = new CreateHandler();
     const viewData = await handler.execute(req, res, "POST");
     res.render(`${routeViews}/create`, viewData);
-    // if (!Object.keys(viewData.errors).length) {
-    //     res.render(`${routeViews}/create`, viewData);
-    // } else {
-    //     res.redirect(302, "/");
-    // }
 });
 
 router.get("/details/:id", async (req: Request, res: Response, next: NextFunction) => {

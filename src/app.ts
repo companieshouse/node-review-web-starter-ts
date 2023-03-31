@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import nunjucks from "nunjucks";
 import path from "path";
 import logger from "./lib/Logger";
@@ -39,8 +39,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Unhandled errors
-app.use((err: any, req:express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     logger.error(`${err.name} - appError: ${err.message} - ${err.stack}`);
+    res.render("partials/error_500");
 });
 
 // Channel all requests through router dispatch
