@@ -1,13 +1,13 @@
-{% if errors is not undefined and errors is not undefined and errors | length %}
+{% if errors is not undefined and errors is not null and errors | length %}
   <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
     <h2 class="govuk-error-summary__title" id="error-summary-title">
       There is a problem
     </h2>
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
-        {% if errors.genericError is not undefined %}
+        {% if errors.serverError is not undefined %}
           <li>
-            {{ errors.genericError.summary }}
+            {{ errors.serverError.summary }}
           </li>
         {% else %}
           {% for key,err in errors %}
