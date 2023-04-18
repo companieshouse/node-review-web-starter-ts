@@ -6,8 +6,11 @@ import routerDispatch from "./router.dispatch";
 
 const app = express();
 
-const viewPath = path.join(__dirname, "/views");
-app.set("views", viewPath);
+// const viewPath = path.join(__dirname, "/views");
+app.set("views", [
+    path.join(__dirname, "/views"),
+    path.join(__dirname, "/../node_modules/govuk-frontend")
+]);
 
 const nunjucksLoaderOpts = {
     watch: process.env.NUNJUCKS_LOADER_WATCH !== "false",
