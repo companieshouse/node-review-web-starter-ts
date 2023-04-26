@@ -142,7 +142,8 @@ Empty directories and files, wherever you find them, are only there for complete
 - [x] Include sample page displays on start-up with CH headers, CH footers and GOV_UK error flows
 - [ ] Assign non-typed objects (and also replace the `any` type) with well-defined types and interfaces across class definitions and methods
 - [ ] Bump up test coverage to meet set thresholds
-- [ ] Resolve all vulnerability warnings and errors flagged by `npm audit`
 - [ ] Upgrade to Node v18 at appropriate time
+- [ ] Resolve all vulnerability warnings and errors flagged by `npm audit`
+- [ ] Add OWASP's `dependency-check` to detect publicly disclosed vulnerabilities contained within dependencies
 - [ ] Squelch SASS compilation deprecation warnings coming from the `govuk-frontend` toolkit. These deprecation warnings are a known issue [here](https://github.com/alphagov/govuk-frontend/issues/2238).
 
