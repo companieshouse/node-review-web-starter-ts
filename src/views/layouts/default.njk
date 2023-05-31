@@ -17,9 +17,6 @@
 
         <div class="govuk-grid-row">
           {% include "partials/error_summary.njk" %}
-          <div class="govuk-grid-column-one-third">
-            {% include "partials/nav/left.njk" %}
-          </div>
           <div class="govuk-grid-column-two-thirds" id="main-page-content">
             {% block main_content %}
             {% endblock %}
@@ -33,3 +30,4 @@
 
   </body>
 </html>
+
