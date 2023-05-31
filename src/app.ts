@@ -3,6 +3,7 @@ import nunjucks from "nunjucks";
 import path from "path";
 import logger from "./lib/Logger";
 import routerDispatch from "./router.dispatch";
+import * as config from "./config";
 
 const app = express();
 
@@ -29,10 +30,10 @@ app.set("view engine", "njk");
 app.use(express.static(path.join(__dirname, "/../assets/public")));
 // app.use("/assets", express.static("./../node_modules/govuk-frontend/govuk/assets"));
 
-njk.addGlobal("cdnUrlCss", process.env.CDN_URL_CSS);
-njk.addGlobal("cdnUrlJs", process.env.CDN_URL_JS);
-njk.addGlobal("cdnHost", process.env.CDN_HOST);
-njk.addGlobal("chsUrl", process.env.CHS_URL);
+njk.addGlobal("cdnUrlCss", config.CDN_URL_CSS);
+njk.addGlobal("cdnUrlJs", config.CDN_URL_JS);
+njk.addGlobal("cdnHost", config.CDN_HOST);
+njk.addGlobal("chsUrl", config.CHS_URL);
 
 // If app is behind a front-facing proxy, and to use the X-Forwarded-* headers to determine the connection and the IP address of the client
 app.enable("trust proxy");

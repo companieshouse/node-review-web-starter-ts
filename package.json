@@ -18,7 +18,7 @@
     "coverage:report": "nyc --reporter=lcov --reporter=text npm run test",
     "test:coverage": "nyc npm test",
     "test": "mocha --recursive test/src/**/*.ts",
-    "start": "npm run build && source ./dist/config/.env && node dist/server.js",
+    "start": "npm run build && node dist/server.js",
     "start:watch": "nodemon"
   },
   "husky": {
