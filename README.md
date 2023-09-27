@@ -1,16 +1,17 @@
+
 # Typescript Web Starter for Companies House
 
 This web-starter is designed to allow you to very quickly create a GOV_UK web app using Typescript/Node.js. It provides you with the essential building blocks (or scaffolding) for piecing together a Typescript web app and to dictate your overall project structure.
 
 A corresponding web-starter, in native Javascript, can be found [here](https://github.com/companieshouse/node-review-web-starter-js).
 
-#### Super Quick Note:
+#### Quick Note:
 
 There's a **To-do** list at the bottom of this document. Please take a moment to have a quick look through at what remains to be done, and feel free to complete one or more items on this list or add items that you feel were omitted, or would be useful to have.
 
 ## Node Versions
 
-- Before downloading and installing this project, ensure you have Node version `16.19.1` installed on your device. Version `16.x.x` should still work but `16.19.1` is recommended.
+- Before downloading and installing this project, ensure you have Node version `18.17.0` installed on your device. Version `18.x.x` should still work but `18.17.0` is recommended.
 
 - Better still, if you use multiple versions of Node for different projects on your device, consider installing the Node Version Manager (NVM) to frictionlessly switch between Node versions for your projects.
 
@@ -80,10 +81,6 @@ For SSL connections, navigate to https://localhost:3443
 
 _**A few quick notes below about the warnings you get when you start the app:**_
 
-- Presently, when you start the app, you will see a bunch of deprecation warnings from the SASS compiler. These come from the`govuk-frontend` package that has not yet been updated to match the latest SASS guidelines.
-- The `govuk-frontend` team are aware of this problem and have an issue pending [here](https://github.com/alphagov/govuk-frontend/issues/2238)
-- So, for now, given that these warnings do not stop a successful build from happening, please **ignore** them until such a time when the package is updated with a fix.
-
 ### Empty Directories and Files
 
 Empty directories and files, wherever you find them, are only there for completeness -- to showcase a folder structure that you should use.
@@ -133,17 +130,19 @@ Empty directories and files, wherever you find them, are only there for complete
 
 - Companies House follows the [StandardJS](https://standardjs.com/) coding conventions for both JavaScript and Typescript. Details about these guidelines are documented internally [here](https://github.com/companieshouse/styleguides/blob/main/javascript_node.md).
 
+
+
 ## To-do
 
 - [x] Ensure compatibility with Node v16
+- [x] Upgrade to Node v18 at appropriate time
 - [x] Revise linting rule-set
 - [x] Add pre-commit GIT hooks
 - [x] Lock down major dependencies to specific versions that are proven to work well
 - [x] Include sample page displays on start-up with CH headers, CH footers and GOV_UK error flows
-- [ ] Assign non-typed objects (and also replace the `any` type) with well-defined types and interfaces across class definitions and methods
-- [ ] Bump up test coverage to meet set thresholds
-- [ ] Upgrade to Node v18 at appropriate time
-- [ ] Resolve all vulnerability warnings and errors flagged by `npm audit`
-- [ ] Add OWASP's `dependency-check` to detect publicly disclosed vulnerabilities contained within dependencies
-- [ ] Squelch SASS compilation deprecation warnings coming from the `govuk-frontend` toolkit. These deprecation warnings are a known issue [here](https://github.com/alphagov/govuk-frontend/issues/2238).
-
+- [x] Resolve all vulnerability warnings and errors flagged by `npm audit`
+- [ ] ~~Bump up test coverage to meet set thresholds~~~ _This is not necessary as the code in this starter is only for illustration purposes_
+- [ ] ~~Assign non-typed objects (and also replace the `any` type) with well-defined types and interfaces across class definitions and methods~~ _This is not necessary as the code in this starter is only for illustration purposes_
+- [ ] ~~Add OWASP's `dependency-check` to detect publicly disclosed vulnerabilities contained within dependencies~~ _We'll be using `npm audit` to perform vulnerability checks. These checks will also be baked into all pipelines going forward._
+- [ ] ~~Squelch SASS compilation deprecation warnings coming from the `govuk-frontend` toolkit. These deprecation warnings are a known issue [here](https://github.com/alphagov/govuk-frontend/issues/2238).~~ _We're using a lower version of the `sass` package to suppress these deprecation warnings that are outside of our control_  
+  
