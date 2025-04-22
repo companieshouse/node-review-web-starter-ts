@@ -1,0 +1,16 @@
+// Opt into new organisations colours
+// https://frontend.design-system.service.gov.uk/sass-api-reference/#govuk-new-organisation-colours
+// Remove when updating to version 6
+$govuk-new-organisation-colours: true;
+
+// Opt into new typography scale
+// https://frontend.design-system.service.gov.uk/sass-api-reference/#govuk-new-typography-scale
+// Remove when updating to version 6
+$govuk-new-typography-scale: true;
+
+// Import the base GOV.UK Frontend so we can make use of the utility helpers
+// See: https://frontend.design-system.service.gov.uk/sass-api-reference/
+@import "govuk/base";
+
+// Application only CSS goes here...
+// Read https://design-system.service.gov.uk/get-started/extending-and-modifying-components/ for how to author application specific CSS

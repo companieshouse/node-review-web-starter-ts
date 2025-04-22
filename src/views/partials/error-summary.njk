@@ -1,0 +1,18 @@
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{% if errors is not undefined and errors is not null and errors | length %}
+  {% set errorList = [] %}
+  {% if errors.serverError is undefined %}
+    {% for key, err in errors %}
+      {% set errorList = (errorList.push({
+        href: "#" + key,
+        text: err.summary
+      }), arr) %}
+    {% endfor %}
+  {% endif %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    descriptionText: errors.serverError.summary if errors.serverError is not undefined,
+    errorList: errorList if errorList
+  }) }}
+{% endif %}

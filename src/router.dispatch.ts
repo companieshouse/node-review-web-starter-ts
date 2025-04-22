@@ -9,7 +9,7 @@ const routerDispatch = (app: Application) => {
     app.use("/user", userRouter);
     app.use("/company", companyRouter);
     app.use("*", (req: Request, res: Response) => {
-        res.status(404).render("partials/error_400");
+        res.status(404).render("layouts/not-found");
     });
 };
 

@@ -10,16 +10,16 @@ export class CompanyFormsValidator extends GenericValidator {
     validateCreateCompany (payload: any): Promise<any> {
         logger.info(`Request to validate create company payload`);
         try {
-            if (typeof payload.email !== "undefined" && !payload.email.length) {
-                this.errors.stack.email = this.errorManifest.validation.email.blank;
-            } else if (!this.isValidEmail(payload.email)) {
-                this.errors.stack.email = this.errorManifest.validation.email.incorrect;
-            }
-
             if (typeof payload.companyName !== "undefined" && !payload.companyName.length) {
                 this.errors.stack.companyName = this.errorManifest.validation.companyName.blank;
             } else if (!this.isValidCompanyName(payload.companyName)) {
                 this.errors.stack.companyName = this.errorManifest.validation.companyName.incorrect;
+            }
+
+            if (typeof payload.email !== "undefined" && !payload.email.length) {
+                this.errors.stack.email = this.errorManifest.validation.email.blank;
+            } else if (!this.isValidEmail(payload.email)) {
+                this.errors.stack.email = this.errorManifest.validation.email.incorrect;
             }
 
             if (typeof payload.description !== "undefined" && !payload.description.length) {
