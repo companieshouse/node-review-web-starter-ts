@@ -1,6 +1,18 @@
+// Opt into new organisations colours
+// https://frontend.design-system.service.gov.uk/sass-api-reference/#govuk-new-organisation-colours
+// Remove when updating to version 6
+$govuk-new-organisation-colours: true;
+
+// Opt into new typography scale
+// https://frontend.design-system.service.gov.uk/sass-api-reference/#govuk-new-typography-scale
+// Remove when updating to version 6
+$govuk-new-typography-scale: true;
+
 $govuk-global-styles: true;
 
-@import "node_modules/govuk-frontend/govuk/all";
+// See: https://frontend.design-system.service.gov.uk/sass-api-reference/
+// Import the base GOV.UK Frontend so we can make use of the utility helpers
+@import "govuk/base";
 
 html {
   font-family: arial;
@@ -19,4 +31,3 @@ form {
     border: 0;
   }
 }
-

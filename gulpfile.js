@@ -29,7 +29,9 @@ gulp.task("sass", () => {
             errLogToConsole: true,
             outputStyle: "compressed",
             indentedSyntax: false,
-            includePaths: []
+            includePaths: [
+                "node_modules/govuk-frontend/dist"
+            ]
         })
             .on("error", sass.logError))
         .pipe(gulp.dest(dstDirCss));
