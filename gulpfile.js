@@ -30,8 +30,7 @@ gulp.task("sass", () => {
             outputStyle: "compressed",
             indentedSyntax: false,
             includePaths: [
-                "node_modules/govuk_frontend_toolkit/stylesheets",
-                "node_modules/govuk-elements-sass/public/sass"
+                "node_modules/govuk-frontend/dist"
             ]
         })
             .on("error", sass.logError))
