@@ -1,23 +1,4 @@
-<head>
-{#    {% from "govuk/components/cookie-banner/macro.njk"  import govukCookieBanner %}#}
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="utf-8" />
-    <title>{{ title }}</title>
-    <link href="{{ cdnHost }}/stylesheets/govuk-frontend/v5.9.0/govuk-frontend-5.9.0.min.css" rel="stylesheet"/>
-    <link rel="icon" sizes="48x48" href="{{ cdnHost }}/images/govuk-frontend/v5.9.0/favicon.ico">
-    <link rel="icon" sizes="any" href="{{ cdnHost }}/images/govuk-frontend/v5.9.0/favicon.svg" type="image/svg+xml">
-    <link rel="mask-icon" href="{{ cdnHost }}/images/govuk-frontend/v5.9.0/govuk-icon-mask.svg" color="{{ themeColor | default("#0b0c0c") }}"> {#- Hardcoded value of $govuk-black #}
-    <link rel="apple-touch-icon" href="{{ cdnHost }}/images/govuk-frontend/v5.9.0/govuk-icon-180.png">
-
-    <link href="{{ cdnUrlCss }}/app.min.css" media="all" rel="stylesheet" type="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    {# <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> #}
-    {# Set the page object to hold values exported from server to JS files #}
-    <script>
-        var page = page || {};
-    </script>
-    {# <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script> #}
-</head>
-
-{#<script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>#}
+<link href="{{ cdnUrlCss }}/app.min.css" media="all" rel="stylesheet" type="text/css" />
+<script>
+    var page = page || {};
+</script>

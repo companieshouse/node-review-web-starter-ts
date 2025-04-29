@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import nunjucks from "nunjucks";
 import path from "path";
+import { getGOVUKFrontendVersion } from "@companieshouse/ch-node-utils";
 import logger from "./lib/Logger";
 import routerDispatch from "./router.dispatch";
 
@@ -9,7 +10,8 @@ const app = express();
 // const viewPath = path.join(__dirname, "/views");
 app.set("views", [
     path.join(__dirname, "/views"),
-    path.join(__dirname, "/../node_modules/govuk-frontend")
+    path.join(__dirname, "/../node_modules/govuk-frontend/dist"),
+    path.join(__dirname, "/../node_modules/@companieshouse")
 ]);
 
 const nunjucksLoaderOpts = {
@@ -32,6 +34,7 @@ app.use(express.static(path.join(__dirname, "/../assets/public")));
 njk.addGlobal("cdnUrlCss", process.env.CDN_URL_CSS);
 njk.addGlobal("cdnUrlJs", process.env.CDN_URL_JS);
 njk.addGlobal("cdnHost", process.env.CDN_HOST);
+njk.addGlobal("govukFrontendVersion", getGOVUKFrontendVersion());
 njk.addGlobal("chsUrl", process.env.CHS_URL);
 
 // If app is behind a front-facing proxy, and to use the X-Forwarded-* headers to determine the connection and the IP address of the client
