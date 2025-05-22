@@ -27,17 +27,23 @@ Having cloned the project into your project root, run the following commands:
 
 ### Config Set-up
 
-- The web-starter uses environment variables for configuration.
+The web-starter uses environment variables for configuration.
 
-- The config file is located at `src/config/.env.example` and should be copied over to `src/config/.env`. This is because `.env.example` is versioned and does not contain any sensitive information whereas `.env` (which is the actual config file used by the app) is not versioned due to the fact that it may (or may not) be used to store sensitive application information e.g passwords, certificate paths, API keys, etc...
+Some environment variables contain secrets, for example passwords.
+We do not want to store these in Git and share widely, keeping them in an environment file reduces this risk.
 
-- You will need to tweak some values in `.env` to suit your local set up e.g. port number, hostname, SSL settings, etc...
+1. Copy `src/config/.env.example` to `src/config/.env`.
+2. Change the values as needed e.g. port number, hostname, SSL settings, etc.
 
-- Of particular note is the `CDN_HOST` value. You may:
-  - leave it empty to use locally built assets, or
-  - use the `staging` or `prod` value to gain access to assets not available in your local environment e.g. vendor specific libraries like jQuery (this is because the `govuk-frontend` and `govuk_frontend_toolkit` npm packages do not ship with vendor specific libraries).
-  - You can get the production value from the Platform Team or by viewing the page source of the [DevHub](https://developer.company-information.service.gov.uk/) page.
-  - At the time of writing, this value is `//drv45oe4qnhl0.cloudfront.net` but can change at any time. Always ensure you have the most recent value when using it.
+#### Configuring the CDN
+
+We use a [central CDN to host shared assets](https://github.com/companieshouse/cdn.ch.gov.uk/tree/master/app/assets) such as GOV.UK Frontend.
+
+[Run the CDN locally](https://github.com/companieshouse/cdn.ch.gov.uk/wiki/How-to-run-the-CDN-locally), then set the `CDN_HOST` option to `http://cdn.chs.local`.
+
+If you have trouble running the CDN locally, you can try using the `cidev` CDN instance by setting `CDN_HOST` to `//d3miau0r8stw5u.cloudfront.net`.
+
+When using your application in `staging` or `live` environments you'll need to set the `CDN_HOST` value to their with both environments, contact the Platform Team if you need help.
 
 ### SSL Set-up
 
@@ -78,6 +84,8 @@ or, to watch for changes with auto restart in your dev environment, run:
 ...and navigate to http://localhost:3000/ (or whatever hostname/port number combination you've changed the config values to)
 
 For SSL connections, navigate to https://localhost:3443
+
+If the styling is not loading correctly make sure you have [configured the CDN](#configuring-the-cdn).
 
 _**A few quick notes below about the warnings you get when you start the app:**_
 
