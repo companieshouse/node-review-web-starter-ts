@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
-<!--[(if gt IE 8) | (!IE)]><!--><html lang="en" class="govuk-template"><!--<![endif]-->
+{# Extends the Companies House Page Template: https://github.com/companieshouse/ch-node-utils/blob/2.0.0/docs/page-template.md #}
+{% extends "ch-node-utils/templates/layouts/template.njk" %}
 
-    {% include "partials/__meta_header.njk" %}
+{% block pageTitle %}{{ title }}{% endblock %}
 
-    <body class="govuk-template__body" >
+{% block head %}
+  {{ super() }}
+  {% include "partials/__meta_header.njk" %}
+{% endblock %}
 
-        <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
-        {# {% include "partials/cookie_consent_banner.njk" %} #}
-        <a href="#main-page-content" class="govuk-skip-link">Skip to main content</a>
-        {% include "partials/__header.njk" %}
+{% block header %}
+  {% include "partials/__header.njk" %}
+{% endblock %}
 
-        <div class="govuk-width-container ">
-            <main class="govuk-main-wrapper " id="main-content">
-                <div class="govuk-grid-row">
-                    {% block main_content %}
-                    {% endblock %}
-                </div>
+{% block content %}
+    {% block main_content %}{% endblock %}
+{% endblock %}
 
-            </main>
-        </div>
+{% block footer %}
+  {% include "partials/__footer.njk" %}
+{% endblock %}
 
-        {% include "partials/__footer.njk" %}
-
-    </body>
-</html>
+{% block bodyEnd %}
+  {{ super() }}
+  {% include "partials/__meta_footer.njk" %}
+{% endblock %}

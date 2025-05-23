@@ -1,35 +1,49 @@
-<!DOCTYPE html>
-<!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
-<!--[(if gt IE 8) | (!IE)]><!--><html lang="en" class="govuk-template"><!--<![endif]-->
+{# Extends the Companies House Page Template: https://github.com/companieshouse/ch-node-utils/blob/2.0.0/docs/page-template.md #}
+{% extends "ch-node-utils/templates/layouts/template.njk" %}
 
+{% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
+
+{% set mainContentId = "main-page-content" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block head %}
+  {{ super() }}
   {% include "partials/__meta_header.njk" %}
+{% endblock %}
 
-  <body class="govuk-template__body" >
+{% block skipLink %}
+  {{ govukSkipLink({
+    text: "Skip to main content",
+    href: "#" + mainContentId
+  }) }}
+{% endblock %}
 
-    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
-{#    {% include "partials/cookie_consent_banner.njk" %}#}
-    <a href="#main-page-content" class="govuk-skip-link">Skip to main content</a>
-    {% include "partials/__header.njk" %}
+{% block header %}
+  {% include "partials/__header.njk" %}
+{% endblock %}
 
-    <div class="govuk-width-container ">
+{% block bodyStart %}
+  {# {% include "partials/cookie_consent_banner.njk" %} #}
+{% endblock %}
 
-      <main class="govuk-main-wrapper " id="main-content">
-
-        <div class="govuk-grid-row">
-          {% include "partials/error_summary.njk" %}
-          <div class="govuk-grid-column-one-third">
-            {% include "partials/nav/left.njk" %}
-          </div>
-          <div class="govuk-grid-column-two-thirds" id="main-page-content">
-            {% block main_content %}
-            {% endblock %}
-          </div>
-        </div>
-
-      </main>
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      {% include "partials/nav/left.njk" %}
     </div>
+    <div class="govuk-grid-column-two-thirds" id="{{ mainContentId }}">
+      {% include "partials/error_summary.njk" %}
+      {% block main_content %}{% endblock %}
+    </div>
+  </div>
+{% endblock %}
 
-    {% include "partials/__footer.njk" %}
+{% block footer %}
+  {% include "partials/__footer.njk" %}
+{% endblock %}
 
-  </body>
-</html>
+{% block bodyEnd %}
+  {{ super() }}
+  {% include "partials/__meta_footer.njk" %}
+{% endblock %}
