@@ -36,6 +36,7 @@ njk.addGlobal("cdnUrlJs", process.env.CDN_URL_JS);
 njk.addGlobal("cdnHost", process.env.CDN_HOST);
 njk.addGlobal("govukFrontendVersion", getGOVUKFrontendVersion());
 njk.addGlobal("chsUrl", process.env.CHS_URL);
+njk.addGlobal("govukRebrand", process.env.GOVUK_REBRAND === "true");
 
 // If app is behind a front-facing proxy, and to use the X-Forwarded-* headers to determine the connection and the IP address of the client
 app.enable("trust proxy");
