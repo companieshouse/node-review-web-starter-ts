@@ -1,18 +1,19 @@
-<header class="govuk-header" data-module="header">
-  <div class="govuk-header__container govuk-width-container">
-    {% include "partials/banner.njk" %}
-  </div>
-</header>
-<div class="govuk-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-        </span>
-    </p>
-  </div>
-</div>
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
+{{ govukHeader({
+  homepageUrl: "https://gov.uk"
+}) }}
+{{ govukServiceNavigation({
+  serviceName: "Node.js Web Starter",
+  serviceUrl: chsUrl
+}) }}
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Alpha"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+  }) }}
+</div>
