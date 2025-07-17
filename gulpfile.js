@@ -4,6 +4,7 @@ const gulpSass = require("gulp-sass");
 const clean = require("gulp-clean");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
+const rename = require("gulp-rename");
 const exec = require("child_process").exec;
 
 const sass = gulpSass(dartSass);
@@ -23,8 +24,8 @@ gulp.task("clean", () => {
 // Build and minify all .scss files into app.min.css
 gulp.task("sass", () => {
     return gulp
-        .src([`${srcDirCss}/**/*.scss`])
-        .pipe(concat("app.min.css"))
+        .src([`${srcDirCss}/app.scss`])
+        .pipe(rename({ extname: '.min.css' }))
         .pipe(sass({
             errLogToConsole: true,
             outputStyle: "compressed",
@@ -33,7 +34,7 @@ gulp.task("sass", () => {
                 "node_modules/govuk-frontend/dist"
             ]
         })
-            .on("error", sass.logError))
+        .on("error", sass.logError))
         .pipe(gulp.dest(dstDirCss));
 });
 
