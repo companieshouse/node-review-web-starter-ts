@@ -57,19 +57,11 @@ To run the tests, type the following command:
 
 ``` npm test ```
 
-To get a summarised test coverage report, run:
+To get a test coverage, run:
 
 ```npm run coverage```
 
-For a detailed test coverage report, run one of the following commands:
-
-```npm run coverage:report```
-
-or
-
-```npm run test:coverage```
-
-For these tests, we've used [Mocha](http://mochajs.org/) with [Sinon](http://sinonjs.org/) and [Chai](http://chaijs.com/).
+For these tests, we've used TODO.
 
 ### Running the App
 
