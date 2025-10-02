@@ -57,19 +57,11 @@ To run the tests, type the following command:
 
 ``` npm test ```
 
-To get a summarised test coverage report, run:
+To get a test coverage, run:
 
 ```npm run coverage```
 
-For a detailed test coverage report, run one of the following commands:
-
-```npm run coverage:report```
-
-or
-
-```npm run test:coverage```
-
-For these tests, we've used [Mocha](http://mochajs.org/) with [Sinon](http://sinonjs.org/) and [Chai](http://chaijs.com/).
+For these tests, we've used [Jest](https://jestjs.io/) and [Supertest](https://github.com/forwardemail/supertest).
 
 ### Running the App
 
@@ -130,15 +122,9 @@ Empty directories and files, wherever you find them, are only there for complete
 
 - Additionally, the generic error partial (`./src/views/partials/error.njk`) can be used to display an unknown error on a separate page without any additional page content.
 
-### 5. Unit Testing
-
-- This starter kit uses Mocha, Chai and Sinon which have long been the gold standard for writing tests for Node.js apps. Another decent option is [Jest](https://jestjs.io).
-
-### 6. Coding Standards
+### 5. Coding Standards
 
 - Companies House follows the [StandardJS](https://standardjs.com/) coding conventions for both JavaScript and Typescript. Details about these guidelines are documented internally [here](https://github.com/companieshouse/styleguides/blob/main/javascript_node.md).
-
-
 
 ## To-do
 
