@@ -7,14 +7,6 @@
     },
     "extends": ["standard"],
     "parser": "@typescript-eslint/parser",
-    "overrides": [
-         {
-            "files": ["*.test.ts"],
-            "rules": {
-                "no-unused-expressions": "off"
-            }
-        }
-    ],
     "rules": {
         "indent": ["error", 4],
         "quotes": ["error", "double", { "allowTemplateLiterals": true }],

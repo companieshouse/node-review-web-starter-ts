@@ -46,7 +46,7 @@ export class GenericValidator {
 
     isValidDescription (description: string): boolean {
         logger.info(`Request to validate description`);
-        if (description.length > 0 || description.length < 121) {
+        if (description.length > 0 && description.length < 121) {
             return true;
         }
         return false;
