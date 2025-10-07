@@ -11,7 +11,7 @@ There's a **To-do** list at the bottom of this document. Please take a moment to
 
 ## Node Versions
 
-- Before downloading and installing this project, ensure you have Node version `18.17.0` installed on your device. Version `18.x.x` should still work but `18.17.0` is recommended.
+- Before downloading and installing this project, ensure you have Node version `24.9.0` installed on your device. Version `24.x.x` should still work but `24.9.0` is recommended.
 
 - Better still, if you use multiple versions of Node for different projects on your device, consider installing the Node Version Manager (NVM) to frictionlessly switch between Node versions for your projects.
 
