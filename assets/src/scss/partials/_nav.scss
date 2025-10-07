@@ -48,6 +48,6 @@
 .app-subnav__theme {
   margin: 0;
   padding: 10px 15px;
-  color:  govuk-colour("mid-grey");
+  color: govuk-colour("mid-grey");
   @include govuk-font($size: 16, $line-height: 1.5);
 }
