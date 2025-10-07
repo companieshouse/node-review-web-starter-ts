@@ -1,0 +1,16 @@
+{
+    "exec": "ts-node ./src/bin/nodemon-entry.ts",
+    "ext": "ts,js,json,njk,scss,env",
+    "watch": [
+        "./src",
+        "./assets/src",
+        "package.json"
+    ],
+    "ignore": [
+      "**/*.test.ts"
+    ],
+    "events": {
+        "restart": "echo '🔄 '  Nodemon Restarting...",
+        "crash": "echo '💥 '  Nodemon Crashed!"
+    }
+}
