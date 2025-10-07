@@ -1,3 +1,7 @@
+// See: https://frontend.design-system.service.gov.uk/sass-api-reference/
+// Import the base GOV.UK Frontend so we can make use of the utility helpers
+@use "govuk/base" as *;
+
 .app-subnav__section {
   margin: 0 0 20px;
   padding: 0;
@@ -18,17 +22,17 @@
 .app-subnav__link:active,
 .app-subnav__link:hover,
 .app-subnav__link:visited {
-  color: #005ea5;
+  color: $govuk-brand-colour;
 }
 
 .app-subnav__link:hover {
-  border-left-color: #2b8cc4;
+  border-left-color: govuk-colour("light-blue");
 }
 
 .app-subnav__section-item--current {
   .app-subnav__link {
-    border-left-color: #005ea5;
-    background: #f8f8f8;
+    border-left-color: $govuk-brand-colour;
+    background: govuk-colour("light-grey");
     font-weight: bold;
   }
 }
@@ -44,11 +48,6 @@
 .app-subnav__theme {
   margin: 0;
   padding: 10px 15px;
-  color: #6f777b;
-  font-family: 'nta',Arial,sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 1em;
-  line-height: 1.25;
+  color: govuk-colour("mid-grey");
+  @include govuk-font($size: 16, $line-height: 1.5);
 }

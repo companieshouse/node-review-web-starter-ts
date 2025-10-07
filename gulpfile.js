@@ -27,10 +27,11 @@ gulp.task("sass", () => {
         .src([`${srcDirCss}/app.scss`])
         .pipe(rename({ extname: '.min.css' }))
         .pipe(sass({
-            errLogToConsole: true,
-            outputStyle: "compressed",
-            indentedSyntax: false,
-            includePaths: [
+            style: "compressed",
+            // Suppress deprecation warnings from third-party dependencies (e.g. govuk-frontend)
+            // These warnings are not actionable by this project and would otherwise clutter the build output.
+            quietDeps: true,
+            loadPaths: [
                 "node_modules/govuk-frontend/dist"
             ]
         })

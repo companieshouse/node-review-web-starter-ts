@@ -29,7 +29,6 @@ app.set("view engine", "njk");
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "/../assets/public")));
-// app.use("/assets", express.static("./../node_modules/govuk-frontend/govuk/assets"));
 
 njk.addGlobal("cdnUrlCss", process.env.CDN_URL_CSS);
 njk.addGlobal("cdnUrlJs", process.env.CDN_URL_JS);
