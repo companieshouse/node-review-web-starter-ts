@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "node-web-starter-ts",
   "version": "1.0.0",
   "description": "A starter web application for Node.js with Typescript",
