@@ -4,7 +4,7 @@
   "description": "A starter web application for Node.js with Typescript",
   "main": "dist/server.js",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "prebuild": "rm -rf ./dist",
