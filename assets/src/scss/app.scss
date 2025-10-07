@@ -1,11 +1,7 @@
-// See: https://frontend.design-system.service.gov.uk/sass-api-reference/
-// Import the base GOV.UK Frontend so we can make use of the utility helpers
-@import "govuk/base";
-
-@import "partials/menu";
-@import "partials/nav";
+@use "partials/menu";
+@use "partials/nav";
 
 /* Specific to router views */
-@import "company";
-@import "index";
-@import "user";
+@use "company";
+@use "index";
+@use "user";
