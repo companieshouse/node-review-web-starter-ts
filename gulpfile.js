@@ -27,10 +27,9 @@ gulp.task("sass", () => {
         .src([`${srcDirCss}/app.scss`])
         .pipe(rename({ extname: '.min.css' }))
         .pipe(sass({
-            errLogToConsole: true,
-            outputStyle: "compressed",
-            indentedSyntax: false,
-            includePaths: [
+            style: "compressed",
+            quietDeps: true,
+            loadPaths: [
                 "node_modules/govuk-frontend/dist"
             ]
         })
