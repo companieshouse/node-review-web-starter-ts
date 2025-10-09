@@ -33,6 +33,7 @@ export class CreateHandler extends GenericHandler {
     }
 
     // call service(s) to save data here
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     private save (payload: any): object {
         return Promise.resolve(true);
     }

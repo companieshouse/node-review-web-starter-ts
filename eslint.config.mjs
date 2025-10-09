@@ -11,7 +11,12 @@ export default defineConfig(
     rules: {
       // Temporarily turn off failing rules
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": "off"
+      // Sometimes in Express middlewares there are unused variables,
+      // for these exceptions we can use an underscore, e.g. _next.
+      "@typescript-eslint/no-unused-vars": [
+          "error",
+          { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
     }
   }
 );

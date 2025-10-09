@@ -3,7 +3,7 @@ import { GenericValidator } from "./../../validation/generic";
 
 export class CompanyFormsValidator extends GenericValidator {
 
-    constructor (classParam?: string) {
+    constructor () {
         super();
     }
 
@@ -36,12 +36,16 @@ export class CompanyFormsValidator extends GenericValidator {
             } else {
                 return Promise.reject(this.errors);
             }
-        } catch (err) {
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                logger.error(err.message);
+            }
             this.errors.stack = this.errorManifest.generic.serverError;
             return Promise.reject(this.errors);
         }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     validateSaveDetails (payload: any): Promise<any> {
         return Promise.resolve(true);
     }
