@@ -11,7 +11,6 @@ export default defineConfig(
     rules: {
       // Temporarily turn off failing rules
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-wrapper-object-types": "off",
       "@typescript-eslint/no-unused-vars": "off"
     }
   }

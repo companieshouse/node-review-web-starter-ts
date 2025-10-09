@@ -15,7 +15,7 @@ export class GenericHandler {
         };
     }
 
-    processHandlerException (err: any): Object {
+    processHandlerException (err: any): object {
         if (err.name === "VALIDATION_ERRORS") {
             return err.stack;
         }
@@ -24,7 +24,7 @@ export class GenericHandler {
         };
     }
 
-    someCommonMethod (): Object {
+    someCommonMethod (): object {
         return {};
     }
 };
