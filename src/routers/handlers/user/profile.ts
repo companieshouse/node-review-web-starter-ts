@@ -10,14 +10,14 @@ export class ProfileHandler extends GenericHandler {
         this.viewData.sampleKey = "sample value for user profile screen";
     }
 
-    async execute (req: Request, response: Response, method?: string): Promise<Object> {
-        logger.info(`GET request for to get user profile`);
+    async execute (req: Request, response: Response, method?: string): Promise<object> {
+        logger.info(`${method} request for to get user profile`);
         // ...process request here and return data for the view
         return this.viewData;
     }
 
     // additional support method in handler
-    private supportMethod1 (): Object {
+    private supportMethod1 (): object {
         return {};
     }
 

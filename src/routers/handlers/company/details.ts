@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { GenericHandler } from "./../generic";
-import { CompanyFormsValidator } from "./../../../lib/validation/formValidators/company";
 import logger from "../../../lib/Logger";
 
 export class DetailsHandler extends GenericHandler {
@@ -10,7 +9,7 @@ export class DetailsHandler extends GenericHandler {
         this.viewData.sampleKey = "sample value for company details screen";
     }
 
-    execute (req: Request, response: Response): Promise<Object> {
+    execute (req: Request, _response: Response): Promise<object> {
         logger.info(`GET request for to get company details, with id: ${req.params.id}`);
         // ...process request here and return data for the view
         return Promise.resolve(this.viewData);
