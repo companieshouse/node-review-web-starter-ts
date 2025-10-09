@@ -25,28 +25,28 @@
     }
   },
   "dependencies": {
-    "@companieshouse/ch-node-utils": "^2.0.0",
-    "@companieshouse/structured-logging-node": "^1.0.8",
-    "express": "4.18.2",
+    "@companieshouse/ch-node-utils": "^2.1.10",
+    "@companieshouse/structured-logging-node": "^2.0.4",
+    "express": "^4.21.2",
     "govuk-frontend": "5.11.0",
-    "nunjucks": "3.2.4"
+    "nunjucks": "^3.2.4"
   },
   "devDependencies": {
     "@jest/globals": "^30.2.0",
-    "@types/express": "^4.17.6",
-    "@types/node": "^12.7.8",
-    "@types/nunjucks": "3.1.2",
+    "@types/express": "^4.17.23",
+    "@types/node": "^24.7.0",
+    "@types/nunjucks": "^3.2.6",
     "@types/supertest": "^6.0.3",
-    "@typescript-eslint/eslint-plugin": "2.29.0",
-    "@typescript-eslint/parser": "2.29.0",
-    "cheerio": "^1.1.0",
-    "eslint": "6.8.0",
-    "eslint-config-standard": "14.1.1",
-    "eslint-plugin-import": "2.20.2",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
-    "gulp": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "cheerio": "^1.1.2",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "gulp": "^5.0.1",
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.1.0",
@@ -54,15 +54,11 @@
     "gulp-uglify": "^3.0.2",
     "husky": "^4.3.8",
     "jest": "^30.2.0",
-    "nodemon": "^3.0.1",
+    "nodemon": "^3.1.10",
     "sass": "^1.93.2",
     "supertest": "^7.1.4",
     "ts-jest": "^29.4.4",
     "ts-node": "8.10.1",
     "typescript": "4.9.5"
-  },
-  "overrides": {
-    "chokidar": "3.5.3",
-    "glob-parent": "6.0.2"
   }
 }
