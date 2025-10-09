@@ -10,14 +10,14 @@ export class SettingsHandler extends GenericHandler {
         this.viewData.sampleKey = "sample value for user settings screen";
     }
 
-    async execute (req: Request, response: Response, method: string = "GET"): Promise<Object> {
+    async execute (req: Request, response: Response, method: string = "GET"): Promise<object> {
         logger.info(`${method} request for user settings`);
         // ...process request here and return data for the view
         return this.viewData;
     }
 
     // additional support method in handler
-    private supportMethod1 (): Object {
+    private supportMethod1 (): object {
         return {};
     }
 
