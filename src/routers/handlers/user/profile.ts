@@ -11,7 +11,7 @@ export class ProfileHandler extends GenericHandler {
     }
 
     async execute (req: Request, response: Response, method?: string): Promise<object> {
-        logger.info(`GET request for to get user profile`);
+        logger.info(`${method} request for to get user profile`);
         // ...process request here and return data for the view
         return this.viewData;
     }

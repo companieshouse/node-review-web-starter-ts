@@ -33,7 +33,7 @@ export class CreateHandler extends GenericHandler {
     }
 
     // call service(s) to save data here
-    private save (payload: any): Promise<boolean> {
+    private save (_payload: any): Promise<boolean> {
         return Promise.resolve(true);
     }
 

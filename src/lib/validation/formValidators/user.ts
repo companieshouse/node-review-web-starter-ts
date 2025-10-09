@@ -2,7 +2,7 @@ import logger from "./../../Logger";
 import { GenericValidator } from "./../../validation/generic";
 
 export class UserFormsValidator extends GenericValidator {
-    constructor (classParam?: string) {
+    constructor () {
         super();
     }
 
@@ -24,17 +24,20 @@ export class UserFormsValidator extends GenericValidator {
             } else {
                 return Promise.reject(this.errors);
             }
-        } catch (err) {
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                logger.error(err.message);
+            }
             this.errors.stack = this.errorManifest.generic.serverError;
             return Promise.reject(this.errors);
         }
     }
 
-    validateProfileUpdate (payload: any): Promise<any> {
+    validateProfileUpdate (_payload: any): Promise<any> {
         return Promise.resolve(true);
     }
 
-    validateRegistration (payload: any): Promise<any> {
+    validateRegistration (_payload: any): Promise<any> {
         return Promise.resolve(true);
     }
 };
