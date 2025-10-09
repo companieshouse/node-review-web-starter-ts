@@ -16,7 +16,7 @@
     "coverage": "jest --coverage",
     "test": "jest",
     "start": "npm run build && source ./dist/config/.env && node dist/server.js",
-    "start:watch": "nodemon",
+    "start:watch": "source ./dist/config/.env && nodemon",
     "chs-dev": "nodemon --legacy-watch"
   },
   "husky": {
